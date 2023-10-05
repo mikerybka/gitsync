@@ -36,7 +36,7 @@ func ReadConfig(dir string) (*Config, error) {
 	return &c, nil
 }
 
-type Config map[string][]string // maps repos to fs locations
+type Config map[string][]string // maps branch:repo to fs location
 
 func (c *Config) HandleWebhook(w *github.Webhook) error {
 	b, _ := json.MarshalIndent(w, "", "  ")
